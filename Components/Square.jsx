@@ -12,6 +12,7 @@ let timerId;
             setMoleActive(true)
             setTimeout(() => {setMoleActive(false)}, 800)
         }, randomTime)
+
         setTimeout(endGame, 60 * 1000)
     }, [])
 
@@ -21,7 +22,7 @@ let timerId;
     }
 
     return (
-        <View style={moleActive ? styles.mole : styles.square}>
+        <View style={moleActive? styles.mole : styles.square}>
            {isGameOver && <Text>X</Text>}
         </View>
     );

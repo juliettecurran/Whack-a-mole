@@ -1,0 +1,1 @@
+export const ADD__SCORE = 'ADD_SCORE'
