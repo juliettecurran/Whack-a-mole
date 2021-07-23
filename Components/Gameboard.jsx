@@ -1,11 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Square from './Square';
 
 const Gameboard = () => {
+    const [timeLeft, setTimeLeft] = useState(10);
+
+    useEffect(() => {
+        if (!timeLeft) return
+        const timerId = setInterval(() => {
+            setTimeLeft(timeLeft -1)
+        }, 1000)
+        return () => clearInterval(timerId)
+    }, [timeLeft])
+
+
     return (
         <View style={styles.container}>
         <Text>Whack-a-mole!</Text>
+        <Text>{timeLeft}</Text>
         <View style={styles.game}>
           <Square></Square>
           <Square></Square>
