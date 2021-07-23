@@ -5,15 +5,15 @@ const Square = () => {
     const [moleActive, setMoleActive] = useState(false)
     const [isGameOver, setGameOver] = useState(false)
 
-    const randomTime = Math.random() * 20000;
-let timerId;
+    const randomTime = Math.random() * 20000
+    let timerId
+
     useEffect(() => {
         timerId = setInterval(() => {
             setMoleActive(true)
             setTimeout(() => {setMoleActive(false)}, 800)
         }, randomTime)
-
-        setTimeout(endGame, 60 * 1000)
+        setTimeout(endGame, 10 * 1000)
     }, [])
 
     function endGame() {
