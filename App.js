@@ -1,12 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from 'react-redux';
 import Gameboard from './Components/Gameboard';
 
 
 
 export default function App() {
   return (
-    <Gameboard/>
-  );
+    <Provider>
+      <Gameboard/>
+    </Provider>
+    );
 }
 
