@@ -17,8 +17,8 @@ const Gameboard = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.textTitle}>Whack-a-mole!</Text>
-      <Text style={styles.timer}>{timeLeft}</Text>
-      <Text>{props.score}</Text>
+      <Text style={styles.timer}>{timeLeft} seconds left</Text>
+      <Text style={styles.score}>{props.score} moles whacked!</Text>
       <View style={styles.game}>
         <Square></Square>
         <Square></Square>
@@ -54,10 +54,8 @@ const styles = StyleSheet.create({
 
   timer: {
     fontWeight: 'bold',
-    fontSize: 25,
+    fontSize: 19,
     color: 'mintcream',
-    marginBottom: 30,
-    marginBottom: 30,
   },
 
   game: {
@@ -66,6 +64,11 @@ const styles = StyleSheet.create({
     width: 300,
     paddingTop: 20,
     borderRadius: 10,
+  },
+  score: {
+    color: 'sienna',
+    fontSize: 19,
+    fontWeight: 'bold',
   },
 });
 
